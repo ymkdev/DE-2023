@@ -51,8 +51,8 @@ public class UBERStudent20210313
                                 StringTokenizer itr2 = new StringTokenizer(val.toString(), ",");
 			       	dateS= itr2.nextToken();
 				StringTokenizer itr3 = new StringTokenizer(dateS, "/");
-				day =Integer.parseInt(itr3.nextToken());
-			       	month =Integer.parseInt(itr3.nextToken());
+				month =Integer.parseInt(itr3.nextToken());
+			       	day =Integer.parseInt(itr3.nextToken());
 				year = Integer.parseInt(itr3.nextToken());	
 				LocalDate date = LocalDate.of(year, month, day);
     

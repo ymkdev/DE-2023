@@ -100,7 +100,7 @@ public class UBERStudent20210313
                 Job job = new Job(conf, "UBERStudent20210313");
                 job.setJarByClass(UBERStudent20210313.class);
                 job.setMapperClass(UBERStudent20210313Mapper.class);
-                job.setCombinerClass(UBERStudent20210313Reducer.class);
+                //job.setCombinerClass(UBERStudent20210313Reducer.class);
                 job.setReducerClass(UBERStudent20210313Reducer.class);
                 job.setOutputKeyClass(Text.class);
                 job.setOutputValueClass(Text.class);

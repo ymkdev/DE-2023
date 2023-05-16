@@ -24,11 +24,45 @@ public class UBERStudent20210313
                         Text outputValue = new Text();
                         String joinKey = "";
                         String o_value = "";
-                        joinKey = itr.nextToken();
-			o_value = itr.nextToken()+","+itr.nextToken()+","+itr.nextToken();
-                        outputKey.set( joinKey );
-                        outputValue.set( o_value );
+                        String dateS = "";
+                        int year=0;
+                        int month=0;
+                        int day=0;
+                        String answer="";
+                        String vehicles="";
+                        String trips="";
+
+                        joinKey=itr.nextToken();
+                        dateS= itr.nextToken();
+                        StringTokenizer itr3 = new StringTokenizer(dateS, "/");
+                        month =Integer.parseInt(itr3.nextToken());
+                        day =Integer.parseInt(itr3.nextToken());
+                        year = Integer.parseInt(itr3.nextToken());
+                        LocalDate date = LocalDate.of(year, month, day);
+                        DayOfWeek dayOfWeek = date.getDayOfWeek();
+                        if(dayOfWeek.getValue() == 1) {
+                                answer = "MON";
+                        }else if (dayOfWeek.getValue() == 2) {
+                                answer = "TUE";
+                        }else if (dayOfWeek.getValue() == 3) {
+                                answer = "WED";
+                        }else if (dayOfWeek.getValue() == 4) {
+                                answer = "THR";
+                        }else if (dayOfWeek.getValue() == 5) {
+                                answer = "FRI";
+                        }else if (dayOfWeek.getValue() == 6) {
+                                answer = "SAT";
+                        }else if (dayOfWeek.getValue() == 7) {
+                                answer = "SUN";
+                        }
+                        joinKey = joinKey+","+answer;
+			outputKey.set( joinKey );
+                        vehicles = itr.nextToken();
+                        trips = itr.nextToken();
+                        outputValue.set( trips+","+vehicles );
                         context.write( outputKey, outputValue );
+
+
                 }
                                                                                            
 	}
@@ -36,55 +70,23 @@ public class UBERStudent20210313
         {
                 public void reduce(Text key, Iterable<Text> values, Context context) throws IOException,InterruptedException
                 {
-
-                        Text reduce_key = new Text();
+			Text reduce_key = new Text();
                         Text reduce_result = new Text();
-                        String dateS = "";
-			int year=0;
-			int month=0;
-			int day=0;
-			String answer="";
-			String vehicles="";
-			String trips="";
-
-                        for (Text val : values) {
+                        int sum=0;
+                        int sum2=0;
+                        String result="";
+                        for (Text val : values)
+                        {
                                 StringTokenizer itr2 = new StringTokenizer(val.toString(), ",");
-			       	dateS= itr2.nextToken();
-				StringTokenizer itr3 = new StringTokenizer(dateS, "/");
-				month =Integer.parseInt(itr3.nextToken());
-			       	day =Integer.parseInt(itr3.nextToken());
-				year = Integer.parseInt(itr3.nextToken());	
-				LocalDate date = LocalDate.of(year, month, day);
-    
-
-       				 // 2. DayOfWeek 객체 구하기
-       				DayOfWeek dayOfWeek = date.getDayOfWeek();
-
-        			// 3. 숫자 요일 구하기
-        			//int dayOfWeekNumber = dayOfWeek.getValue();
-                               
-				if(dayOfWeek.getValue() == 1) {
-					answer = "MON";
-				}else if (dayOfWeek.getValue() == 2) {
-					answer = "TUE";
-				}else if (dayOfWeek.getValue() == 3) {
-					answer = "WED";
-				}else if (dayOfWeek.getValue() == 4) {
-					answer = "THR";
-				}else if (dayOfWeek.getValue() == 5) {
-					answer = "FRI";
-				}else if (dayOfWeek.getValue() == 6) {
-					answer = "SAT";
-				}else if (dayOfWeek.getValue() == 7) {
-					answer = "SUN";
-				}       
-
-				reduce_key.set(key+","+answer);
-				vehicles = itr2.nextToken();
-				trips = itr2.nextToken();
-				reduce_result.set(trips+","+vehicles);
-				context.write(reduce_key, reduce_result);
+                                int n1 =Integer.parseInt(itr2.nextToken());
+                                int n2 =Integer.parseInt(itr2.nextToken());
+                                sum +=n1;
+                                sum2 +=n2;
                         }
+                        result= sum+","+sum2;
+                        reduce_result.set(result);
+                        context.write(key, reduce_result);
+
 
                 }
         }

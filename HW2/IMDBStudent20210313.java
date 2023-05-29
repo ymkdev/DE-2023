@@ -68,7 +68,7 @@ public class IMDBStudent20210313
                 {
 			String filename = ((FileSplit) context.getInputSplit()).getPath().getName();
 
-                        if ( filename.indexOf( "movies.dat" ) != -1 ) fileA = true;
+                        if ( filename.indexOf( "movies.txt" ) != -1 ) fileA = true;
                                 else fileA = false;
                 }
 	}

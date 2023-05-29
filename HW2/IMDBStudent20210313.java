@@ -30,7 +30,7 @@ public class IMDBStudent20210313
                 }
         }
 	
-	public static void insertEmp(PriorityQueue q, String description, double avg_rating, int topK)
+	public static void insertIMDBStudent20210313(PriorityQueue q, String description, double avg_rating, int topK)
         {
                 IMDB IMDBStudent20210313_head = (IMDB) q.peek();
                 if ( q.size() < topK || IMDBStudent20210313_head.avg_rating < avg_rating )

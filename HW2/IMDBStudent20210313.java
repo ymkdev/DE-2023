@@ -73,7 +73,7 @@ public class IMDBStudent20210313
                 }
 	}
 
-	public static class IMDBStudent20210313Reducer extends Reducer<Text,Text,Text,DoubleWritable>
+	public static class IMDBStudent20210313Reducer extends Reducer<Text,Text,Text,Text>
         {
                 private PriorityQueue<IMDB> queue ;
                 private Comparator<IMDB> comp = new IMDBStudent20210313Comparator();
@@ -140,7 +140,7 @@ public class IMDBStudent20210313
                 protected void cleanup(Context context) throws IOException, InterruptedException {
                         while( queue.size() != 0 ) {
                                 IMDB imdbstudent = (IMDB) queue.remove();
-                                context.write( new Text( imdbstudent.description ), new DoubleWritable(imdbstudent.avg_rating)); 
+                                context.write( new Text( imdbstudent.description ), new Text(imdbstudent.avg_rating)); 
                         }
                 }
 
@@ -166,7 +166,7 @@ public class IMDBStudent20210313
                 job.setReducerClass(IMDBStudent20210313Reducer.class);
 		job.setNumReduceTasks(1);
                 job.setOutputKeyClass(Text.class);
-                job.setOutputValueClass(DoubleWritable.class);
+                job.setOutputValueClass(Text.class);
                 FileInputFormat.addInputPath(job, new Path(otherArgs[0]));
                 FileOutputFormat.setOutputPath(job, new Path(otherArgs[1]));
                 FileSystem.get(job.getConfiguration()).delete( new Path(otherArgs[1]), true);

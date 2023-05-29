@@ -107,7 +107,7 @@ public class YouTubeStudent20210313 {
   public static void main(String[] args) throws Exception{
     Configuration conf = new Configuration();
     String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
-    int topK = 3;
+    int topK = 2;
     if (otherArgs.length != 2) {
       System.err.println("Usage: TopK <in> <out>"); System.exit(2);
     }

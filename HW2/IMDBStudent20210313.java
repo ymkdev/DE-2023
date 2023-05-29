@@ -14,7 +14,7 @@ import org.apache.hadoop.util.GenericOptionsParser;
 class IMDB{
 	public String description
 	public double avg_rating;
-	public YouTube(String description, double avg_rating) {
+	public IMDB(String description, double avg_rating) {
 		this.description = description;
    		this.avg_rating = avg_rating;
   	}

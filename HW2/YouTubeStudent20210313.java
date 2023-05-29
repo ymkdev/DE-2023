@@ -95,8 +95,8 @@ public class YouTubeStudent20210313 {
     
   		protected void cleanup(Context context) throws IOException, InterruptedException {
     			while( queue.size() != 0 ) {
-      			YouTube youtubestudent = (YouTube) queue.remove();
-      			context.write( new Text( youtubestudent.category ), new DoubleWritable(youtubestudent.rating) );
+      				YouTube youtubestudent = (YouTube) queue.remove();
+      				context.write( new Text( youtubestudent.category ), new DoubleWritable(youtubestudent.rating) );
     			}
   		}
 	}

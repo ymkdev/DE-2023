@@ -12,7 +12,7 @@ import org.apache.hadoop.mapreduce.lib.output.*;
 import org.apache.hadoop.util.GenericOptionsParser;
 
 class IMDB{
-	public String description
+	public String description;
 	public double avg_rating;
 	public IMDB(String description, double avg_rating) {
 		this.description = description;

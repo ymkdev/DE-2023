@@ -140,7 +140,7 @@ public class IMDBStudent20210313
                 protected void cleanup(Context context) throws IOException, InterruptedException {
                         while( queue.size() != 0 ) {
                                 IMDB imdbstudent = (IMDB) queue.remove();
-                                context.write( new Text( imdbstudent.description ), new DoubleWritable(imdbstudent.avg_rating)); );
+                                context.write( new Text( imdbstudent.description ), new DoubleWritable(imdbstudent.avg_rating)); 
                         }
                 }
 

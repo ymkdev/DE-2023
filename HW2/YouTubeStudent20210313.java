@@ -107,7 +107,7 @@ public class YouTubeStudent20210313 {
     	  		System.err.println("Usage: TopK <in> <out>"); System.exit(2);
     		}
     		conf.setInt("topK", topK);
-    		Job job = new Job(conf, "TopK");
+    		Job job = new Job(conf, "YouTubeStudent20210313");
     		job.setJarByClass(TopK.class);
     		job.setMapperClass(TopKMapper.class);
     		job.setReducerClass(TopKReducer.class);

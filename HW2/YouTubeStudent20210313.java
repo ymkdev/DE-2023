@@ -103,11 +103,11 @@ public class YouTubeStudent20210313 {
 	public static void main(String[] args) throws Exception{
     		Configuration conf = new Configuration();
 		String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
-    		int topK = 2;
-    		if (otherArgs.length != 2) {
+    		//int topK = 2;
+    		if (otherArgs.length != 3) {
     	  		System.err.println("Usage: TopK <in> <out>"); System.exit(2);
     		}
-    		conf.setInt("topK", topK);
+    		conf.setInt("topK", Integer.valueOf(otherArgs[2]));
     		Job job = new Job(conf, "YouTubeStudent20210313");
     		job.setJarByClass(YouTubeStudent20210313.class);
     		job.setMapperClass(YouTubeStudent20210313Mapper.class);

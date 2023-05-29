@@ -38,7 +38,7 @@ public class YouTubeStudent20210313 {
     		}
   	}
   
- 	 public static class YouTubeStudent20210313Mapper extends Mapper<Object, Text, Text, NullWritable> {
+ 	 public static class YouTubeStudent20210313Mapper extends Mapper<Object, Text, Text, DoubleWritable> {
    	//	 private PriorityQueue<YouTubeStudent20210313> queue ;
   	//	 private Comparator<YouTubeStudent20210313> comp = new YouTubeStudent20210313Comparator();
     	//	 private int topK;

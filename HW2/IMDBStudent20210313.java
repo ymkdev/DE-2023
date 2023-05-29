@@ -24,7 +24,7 @@ public class IMDBStudent20210313
                         String joinKey = "";
                         String o_value = "";
                         if( fileA ) {
-				joinkey = itr.nextToken();
+				joinKey = itr.nextToken();
                                 o_value="A,"+itr.nextToken();
                         }
                         else {
@@ -124,7 +124,7 @@ public class IMDBStudent20210313
                                 val3.set(vals);
                                 StringTokenizer itr4 = new StringTokenizer(val3.toString(), ",");
                                 itr4.nextToken();
-				agv_rating += Double.parseDouble(itr4.nextToken());
+				avg_rating += Double.parseDouble(itr4.nextToken());
                               //  reduce_key.set(itr4.nextToken());
                              //   reduce_result.set(itr4.nextToken()+" "+description);
                              //   context.write(reduce_key, reduce_result);

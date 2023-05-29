@@ -83,8 +83,8 @@ public class IMDBStudent20210313
                 InterruptedException
                 {
 
-                        Text reduce_key = new Text();
-                        Text reduce_result = new Text();
+                       // Text reduce_key = new Text();
+                     //   Text reduce_result = new Text();
                         String description2 = "";
 			double avg_rating2=0;
 			int count2=0;

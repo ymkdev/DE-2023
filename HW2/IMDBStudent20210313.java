@@ -85,28 +85,28 @@ public class IMDBStudent20210313
 
                         Text reduce_key = new Text();
                         Text reduce_result = new Text();
-                        String description = "";
-			double avg_rating=0;
-			int count=0;
+                        String description2 = "";
+			double avg_rating2=0;
+			int count2=0;
                         ArrayList<String> buffer = new ArrayList<String>();
 
                         for (Text val : values) {
                                 StringTokenizer itr2 = new StringTokenizer(val.toString(), ",");
                                 String file_type="";
                                 if( itr2.nextToken().equals( "A" ) ) {
-                                        description = itr2.nextToken();
+                                        description2 = itr2.nextToken();
                                 }
                                 else
                                 {
-                                        if ( description.length() == 0 ) {
+                                        if ( description2.length() == 0 ) {
                                                 buffer.add( val.toString() );
                                         }
                                         else {
                                              //   reduce_key.set(description);
-					     	avg_rating +=Double.parseDouble( itr2.nextToken());
+					     	avg_rating2 +=Double.parseDouble( itr2.nextToken());
                                             //    reduce_result.set(itr2.nextToken()+" "+description)
                                            //     context.write(reduce_key, reduce_result);
-						count++;
+						count2++;
                                         }
                                 }
                         }
@@ -119,18 +119,18 @@ public class IMDBStudent20210313
                                 val3.set(vals);
                                 StringTokenizer itr4 = new StringTokenizer(val3.toString(), ",");
                                 itr4.nextToken();
-				avg_rating += Double.parseDouble(itr4.nextToken());
+				avg_rating2 += Double.parseDouble(itr4.nextToken());
                               //  reduce_key.set(itr4.nextToken());
                              //   reduce_result.set(itr4.nextToken()+" "+description);
                              //   context.write(reduce_key, reduce_result);
-			     	count++;
+			     	count2++;
 
                         }
 		//	reduce_key.set(description);
 		//	reduce_result.set((double)avg_rating/count);
 		//	context.write(rudece_key, reduce_result);
-			double avg_rating2 = (double)avg_rating/count;
-			insertIMDBStudent20210313(queue, description, avg_rating2, topK);
+			double avg_rating3 = (double)avg_rating2/count2;
+			insertIMDBStudent20210313(queue, description2, avg_rating3, topK);
                 }
 		protected void setup(Context context) throws IOException, InterruptedException {
                         Configuration conf = context.getConfiguration();

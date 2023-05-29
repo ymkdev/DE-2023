@@ -129,7 +129,7 @@ public class IMDBStudent20210313
 		//	reduce_key.set(description);
 		//	reduce_result.set((double)avg_rating/count);
 		//	context.write(rudece_key, reduce_result);
-			double avg_rating3 = (double)avg_rating2/count2;
+			double avg_rating3 = avg_rating2/count2;
 			insertIMDBStudent20210313(queue, description2, avg_rating3, topK);
                 }
 		protected void setup(Context context) throws IOException, InterruptedException {

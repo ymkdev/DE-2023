@@ -27,7 +27,7 @@ public final class IMDBStudent20210313 implements Serializable {
 	while(itr.hasMoreTokens()){
 		s1 = itr.nextToken();
 	}
-        return Arrays.asList(s1.split("|")).iterator();
+        return Arrays.asList(s1.split("\\|")).iterator();
       }
     };
     JavaRDD<String> words = lines.flatMap(fmf);

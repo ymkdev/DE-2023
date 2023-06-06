@@ -92,13 +92,13 @@ public final class UBERStudent20210313 implements Serializable {
         int sum2=0;
         String result="";
                         
-        StringTokenizer itr2 = new StringTokenizer(x, ",");
-        int n1 =Integer.parseInt(itr2.nextToken());
-        int n2 =Integer.parseInt(itr2.nextToken());
+        StringTokenizer itr5 = new StringTokenizer(x, ",");
+        int n1 =Integer.parseInt(itr5.nextToken());
+        int n2 =Integer.parseInt(itr5.nextToken());
         
-        StringTokenizer itr3 = new StringTokenizer(y, ",");
-        int k1 =Integer.parseInt(itr3.nextToken());
-        int k2 =Integer.parseInt(itr3.nextToken());
+        StringTokenizer itr6 = new StringTokenizer(y, ",");
+        int k1 =Integer.parseInt(itr6.nextToken());
+        int k2 =Integer.parseInt(itr6.nextToken());
         
         sum =n1+k1;
         sum2 =n2+k2;

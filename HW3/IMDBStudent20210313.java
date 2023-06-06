@@ -22,9 +22,9 @@ public final class IMDBStudent20210313 implements Serializable {
       public Iterator<String> call(String s) {
         StringTokenizer itr = new StringTokenizer(s,"::");
         String s1="";      
-			  while(itr.hasMoreTokens()){
-				  s1 = itr.nextToken();
-			  }
+	while(itr.hasMoreTokens()){
+		s1 = itr.nextToken();
+	}
         return Arrays.asList(s1.split("|")).iterator();
       }
     };

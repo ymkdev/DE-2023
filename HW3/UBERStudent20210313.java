@@ -6,6 +6,7 @@ import scala.Tuple2;
 import org.apache.spark.sql.SparkSession;
 import org.apache.spark.api.java.*;
 import org.apache.spark.api.java.function.*;
+import org.apache.spark.api.java.function.Function2
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -76,7 +77,7 @@ public final class UBERStudent20210313 implements Serializable {
 	outputValue = trips+","+vehicles
         //context.write( outputKey, outputValue );
 
-        return new Tuple2(outputKey, outputValue);
+        return new Tuple2<>(outputKey, outputValue);
         
       }
     };

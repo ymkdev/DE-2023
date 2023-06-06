@@ -100,8 +100,8 @@ public final class UBERStudent20210313 implements Serializable {
         int k1 =Integer.parseInt(itr3.nextToken());
         int k2 =Integer.parseInt(itr3.nextToken());
         
-        sum +=n1+k1;
-        sum2 +=n2+k2;
+        sum =n1+k1;
+        sum2 =n2+k2;
                  
         result= sum+","+sum2;
         //reduce_result.set(result);

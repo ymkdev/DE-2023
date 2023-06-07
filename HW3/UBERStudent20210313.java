@@ -54,7 +54,7 @@ public final class UBERStudent20210313 {
         int sumTrips = tripsX + tripsY;
         int sumVehicles = vehiclesX + vehiclesY;
         
-        return sumTrips + ", " + sumVehicles;
+        return sumTrips + "," + sumVehicles;
       }
     });
     

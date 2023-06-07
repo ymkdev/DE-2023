@@ -3,6 +3,7 @@ import java.util.*;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import scala.Tuple2;
+import org.apache.hadoop.io.Text;
 import org.apache.spark.sql.SparkSession;
 import org.apache.spark.api.java.*;
 import org.apache.spark.api.java.function.*;
@@ -33,8 +34,8 @@ public final class UBERStudent20210313 implements Serializable {
         StringTokenizer itr = new StringTokenizer(s, ",");
         Text outputKey = new Text();
         Text outputValue = new Text();
-	String outputKey="";
-	String outputValue="";
+	//String outputKey="";
+	//String outputValue="";
         String joinKey = "";
         String o_value = "";
         String dateS = "";
@@ -109,7 +110,7 @@ public final class UBERStudent20210313 implements Serializable {
         //context.write(key, reduce_result);
         
         
-        return result;
+        return reduce_result;
       }
     };
     JavaPairRDD<Text, Text> counts = pTuples.reduceByKey(f2);

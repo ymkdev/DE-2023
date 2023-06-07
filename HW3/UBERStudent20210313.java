@@ -85,7 +85,7 @@ public final class UBERStudent20210313 implements Serializable {
     JavaPairRDD<Text, Text> pTuples = products.mapToPair(pfA);
 
     Function2<Text, Text, Text> f2 = new Function2<Text, Text, Text>() {
-      public String call(Text x, Text y) {
+      public Text call(Text x, Text y) {
         
         
         //Text reduce_key = new Text();
